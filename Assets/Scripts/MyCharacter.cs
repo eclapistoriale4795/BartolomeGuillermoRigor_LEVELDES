@@ -25,6 +25,7 @@ public class MyCharacter : MonoBehaviour
     void Start()
     {
         character.characterController = GetComponent<CharacterController>(); //this automatically gets the character controller component
+        character.initializeValues();
         //this will lock and hide the cursor from the screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

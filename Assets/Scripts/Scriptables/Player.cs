@@ -21,6 +21,22 @@ public class Player : ScriptableObject
     public float tempStamina; //this is for the changing stamina value
     public float baseHP; //this is the character's base health
     public float tempHP; //this is for the changing hp value
+    public int ammo; //reservior ammunition
+    public int baseAmmo; //this is for the base ammo value
+    public int tempAmmo; //this is for the changing ammo value
+    public bool fullAuto; //Is Weapon Full Auto?
     public bool GameOK; //Is Player Alive?
     public int score; //Player's Score
+
+    public void initializeValues()
+    {
+        baseStamina = 100;
+        tempStamina = 100;
+        baseHP = 100;
+        tempHP = 40;
+        ammo = 0;
+        baseAmmo = 30;
+        tempAmmo = 0;
+        score = 0;
+    }
 }

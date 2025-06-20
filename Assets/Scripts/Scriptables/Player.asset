@@ -13,15 +13,19 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
-  moveDirection: {x: -0, y: -4.898097, z: 0}
-  rotationX: -27.499985
+  moveDirection: {x: 0, y: -12.823136, z: 0}
+  rotationX: 2.0000088
   walkingSpeed: 5
-  runningSpeed: 7
+  runningSpeed: 10
   jumpForce: 10
   gravity: 30
   baseStamina: 100
   tempStamina: 100
   baseHP: 100
   tempHP: 100
+  ammo: 0
+  baseAmmo: 30
+  tempAmmo: 0
+  fullAuto: 0
   GameOK: 1
   score: 0
