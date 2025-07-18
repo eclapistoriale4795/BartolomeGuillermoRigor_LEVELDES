@@ -10,7 +10,8 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] private Item item;
     [SerializeField] private Player receiver;
 
-    void GetAmmo() {
+    void GetAmmo()
+    {
         receiver.tempAmmo += item.incrementAmmo;
         if (receiver.tempAmmo > receiver.baseAmmo)
         {
@@ -22,7 +23,8 @@ public class ItemPickup : MonoBehaviour
         item.canCollect = false;
         Destroy(this.gameObject);
     }
-    void GetHealth() {
+    void GetHealth()
+    {
         if (receiver.tempHP < receiver.baseHP)
         {
             receiver.tempHP += item.incrementHP;
@@ -38,7 +40,23 @@ public class ItemPickup : MonoBehaviour
             print("You cannot get a health kit now, your health is full.");
         }
     }
-
+    void GetKey()
+    {
+        if (receiver.tempHP >= 101)
+        {
+            receiver.tempHP += item.incrementHP;
+            if (receiver.tempHP >= receiver.baseHP)
+            {
+                receiver.tempHP = receiver.baseHP;
+            }
+            item.canCollect = false;
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            print("You cannot get a health kit now, your health is full.");
+        }
+    }
     private void Update()
     {
         if (item.canCollect)
@@ -49,6 +67,7 @@ public class ItemPickup : MonoBehaviour
                 {
                     case 0: GetAmmo(); break; //objectID = 0 -> Ammo Box Item
                     case 1: GetHealth(); break; //objectID = 1 -> Health Kit Item
+                    case 2: GetKey(); break; //objectID = 2 -> Key for next level
                 }
             }
         }
