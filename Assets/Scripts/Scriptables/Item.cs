@@ -7,5 +7,6 @@ public class Item : ScriptableObject
 {
     public int incrementAmmo;
     public int incrementHP;
+    public bool gotKey;
     public bool canCollect;
 }

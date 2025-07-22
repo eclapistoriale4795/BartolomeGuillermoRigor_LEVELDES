@@ -25,11 +25,13 @@ public class Player : ScriptableObject
     public int baseAmmo; //this is for the base ammo value
     public int tempAmmo; //this is for the changing ammo value
     public bool fullAuto; //Is Weapon Full Auto?
+    public bool holdingKey; //Is Player holding a key?
     public bool GameOK; //Is Player Alive?
     public int score; //Player's Score
 
     public void initializeValues()
     {
+        holdingKey = false;
         baseStamina = 100;
         tempStamina = 100;
         baseHP = 100;

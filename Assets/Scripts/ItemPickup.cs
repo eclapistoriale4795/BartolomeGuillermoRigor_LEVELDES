@@ -10,6 +10,11 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] private Item item;
     [SerializeField] private Player receiver;
 
+    private void Start()
+    {
+        item.canCollect = false;
+    }
+
     void GetAmmo()
     {
         receiver.tempAmmo += item.incrementAmmo;
@@ -43,19 +48,11 @@ public class ItemPickup : MonoBehaviour
 
     void GetKey()
     {
-        if (receiver.tempHP >= 101)
+        if (!receiver.holdingKey)
         {
-            receiver.tempHP += item.incrementHP;
-            if (receiver.tempHP >= receiver.baseHP)
-            {
-                receiver.tempHP = receiver.baseHP;
-            }
-            item.canCollect = false;
+            Debug.Log("You got a key!");
+            receiver.holdingKey = true;
             Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("You cannot get a health kit now, your health is full.");
         }
     }
 
